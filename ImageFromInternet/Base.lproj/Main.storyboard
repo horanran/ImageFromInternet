@@ -73,6 +73,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qM7-ZO-GoR">
+                                <rect key="frame" x="281" y="282" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IwU-sM-xAe">
                                 <rect key="frame" x="16" y="0.0" width="568" height="600"/>
                             </scrollView>
@@ -80,14 +84,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="IwU-sM-xAe" secondAttribute="bottom" id="GPG-mL-zYS"/>
+                            <constraint firstAttribute="centerX" secondItem="qM7-ZO-GoR" secondAttribute="centerX" id="lT9-jd-zvp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IwU-sM-xAe" secondAttribute="trailing" id="nTh-AK-veh"/>
                             <constraint firstItem="IwU-sM-xAe" firstAttribute="top" secondItem="aJr-Tr-qdF" secondAttribute="topMargin" id="oOk-W7-sq3"/>
                             <constraint firstItem="IwU-sM-xAe" firstAttribute="leading" secondItem="aJr-Tr-qdF" secondAttribute="leadingMargin" id="qkf-NR-R5T"/>
+                            <constraint firstAttribute="centerY" secondItem="qM7-ZO-GoR" secondAttribute="centerY" id="zRK-tB-lMU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3bj-W8-Jh8"/>
                     <connections>
                         <outlet property="scrollView" destination="IwU-sM-xAe" id="z22-OT-yVg"/>
+                        <outlet property="spinner" destination="qM7-ZO-GoR" id="6kG-80-cas"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Gb-lg-IP9" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -52,6 +53,7 @@
     self.imageView.image = nil;
     if(self.imageUrl)
     {
+        [self.spinner startAnimating];
         NSURLRequest *request = [NSURLRequest requestWithURL:self.imageUrl];
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
@@ -64,7 +66,7 @@
                     self.imageView.image = image;
                     [self.imageView sizeToFit];
                     self.scrollView.contentSize = _imageView?_imageView.image.size:CGSizeZero;
-//                    [self.imageView sizeToFit];
+                    [self.spinner stopAnimating];
                 });
                 }
             }
